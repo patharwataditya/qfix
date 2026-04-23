@@ -28,6 +28,7 @@ public class AuthorityDashboardActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigation;
     private ComplaintViewModel complaintViewModel;
     private AuthViewModel authViewModel;
+    private TextView dashboardTitle;
     private TextView userInfoText;
     private View fragmentContainer;
 
@@ -51,6 +52,7 @@ public class AuthorityDashboardActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabLayout);
         viewPager = findViewById(R.id.viewPager);
         bottomNavigation = findViewById(R.id.bottomNavigation);
+        dashboardTitle = findViewById(R.id.dashboardTitle);
         userInfoText = findViewById(R.id.userInfoText);
         fragmentContainer = findViewById(R.id.fragment_container);
     }
@@ -109,7 +111,7 @@ public class AuthorityDashboardActivity extends AppCompatActivity {
                 if (itemId == R.id.nav_dashboard) {
                     return showDashboard();
                 } else if (itemId == R.id.nav_complaints) {
-                    return showDashboard();
+                    return showComplaints();
                 } else if (itemId == R.id.nav_profile) {
                     return showFragment(new AuthorityProfileFragment());
                 } else {
@@ -120,6 +122,9 @@ public class AuthorityDashboardActivity extends AppCompatActivity {
     }
 
     private boolean showDashboard() {
+        if (dashboardTitle != null) {
+            dashboardTitle.setText(R.string.authority_dashboard);
+        }
         if (appBarLayout != null) {
             appBarLayout.setVisibility(View.VISIBLE);
         }
@@ -142,9 +147,35 @@ public class AuthorityDashboardActivity extends AppCompatActivity {
         return true;
     }
 
+    private boolean showComplaints() {
+        if (dashboardTitle != null) {
+            dashboardTitle.setText(R.string.complaints);
+        }
+        if (appBarLayout != null) {
+            appBarLayout.setVisibility(View.VISIBLE);
+        }
+        if (tabLayout != null) {
+            tabLayout.setVisibility(View.GONE);
+        }
+        if (viewPager != null) {
+            viewPager.setVisibility(View.GONE);
+        }
+        if (fragmentContainer != null) {
+            fragmentContainer.setVisibility(View.VISIBLE);
+        }
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, new AuthorityComplaintsFragment())
+                .commit();
+        return true;
+    }
+
     private boolean showFragment(Fragment fragment) {
         if (fragment == null) {
             return false;
+        }
+        if (dashboardTitle != null) {
+            dashboardTitle.setText(R.string.profile);
         }
         if (appBarLayout != null) {
             appBarLayout.setVisibility(View.GONE);
