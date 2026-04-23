@@ -73,6 +73,7 @@
                 app:cardElevation="4dp">
 
                 <LinearLayout
+                    android:id="@+id/feedbackContentContainer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
@@ -437,7 +438,29 @@
                         android:textColor="@color/text_primary"
                         android:textSize="18sp" />
 
-                    <!-- Feedback form will be added here -->
+                    <TextView
+                        android:id="@+id/feedbackSummaryText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@fontsans-serif-medium"
+                        android:textColor="@color/text_primary"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/feedbackEmptyText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@fontsans-serif"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:id="@+id/feedbackListContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
 
                 </LinearLayout>
 

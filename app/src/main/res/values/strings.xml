@@ -261,6 +261,15 @@
     
     <!-- Feedback -->
     <string name="rate_your_experience">Rate Your Experience</string>
+    <string name="feedback_submitted_successfully">Feedback submitted successfully</string>
+    <string name="feedback_already_submitted">You have already submitted feedback for this complaint</string>
+    <string name="feedback_requires_rating">Please select a rating before submitting</string>
+    <string name="no_feedback_yet">No feedback has been submitted yet.</string>
+    <string name="share_your_feedback_prompt">Share your feedback once the resolution is complete.</string>
+    <string name="your_feedback">Your Feedback</string>
+    <string name="citizen_feedback">Citizen Feedback</string>
+    <string name="average_rating_format">Average rating: %1$.1f/5</string>
+    <string name="feedback_count_format">%1$d feedback entries</string>
     
     <!-- Additional profile strings -->
     <string name="reports">Reports</string>

@@ -5,9 +5,12 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,14 +20,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.qfix.R;
 import com.qfix.data.model.Complaint;
+import com.qfix.data.model.Feedback;
 import com.qfix.data.model.Update;
 import com.qfix.data.model.User;
 import com.qfix.utils.DateUtils;
 import com.qfix.viewmodel.AuthViewModel;
 import com.qfix.viewmodel.ComplaintViewModel;
 import com.google.android.material.chip.Chip;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -50,6 +56,10 @@ public class ComplaintDetailActivity extends AppCompatActivity {
     private CardView resolutionCard;
     private TextView resolutionNoteText;
     private TextView resolvedOnText;
+    private CardView feedbackCard;
+    private TextView feedbackSummaryText;
+    private TextView feedbackEmptyText;
+    private LinearLayout feedbackListContainer;
     private Button escalateButton;
     private Button reportSimilarButton;
     private Button giveFeedbackButton;
@@ -59,6 +69,7 @@ public class ComplaintDetailActivity extends AppCompatActivity {
     private Complaint currentComplaint;
     private String complaintId;
     private boolean isAuthorityUser;
+    private List<Feedback> currentFeedbackList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +108,10 @@ public class ComplaintDetailActivity extends AppCompatActivity {
         resolutionCard = findViewById(R.id.resolutionCard);
         resolutionNoteText = findViewById(R.id.resolutionNoteText);
         resolvedOnText = findViewById(R.id.resolvedOnText);
+        feedbackCard = findViewById(R.id.feedbackCard);
+        feedbackSummaryText = findViewById(R.id.feedbackSummaryText);
+        feedbackEmptyText = findViewById(R.id.feedbackEmptyText);
+        feedbackListContainer = findViewById(R.id.feedbackListContainer);
         escalateButton = findViewById(R.id.escalateButton);
         reportSimilarButton = findViewById(R.id.reportSimilarButton);
         giveFeedbackButton = findViewById(R.id.giveFeedbackButton);
@@ -126,6 +141,7 @@ public class ComplaintDetailActivity extends AppCompatActivity {
                     Toast.makeText(this, "Escalation flow is not implemented yet", Toast.LENGTH_SHORT).show());
             reportSimilarButton.setOnClickListener(v ->
                     Toast.makeText(this, "Report similar flow is not implemented yet", Toast.LENGTH_SHORT).show());
+            giveFeedbackButton.setOnClickListener(v -> openFeedbackDialog());
         }
     }
 
@@ -136,6 +152,7 @@ public class ComplaintDetailActivity extends AppCompatActivity {
         });
 
         complaintViewModel.getUpdatesLiveData().observe(this, this::bindTimeline);
+        complaintViewModel.getFeedbackLiveData().observe(this, this::bindFeedback);
 
         complaintViewModel.getErrorMessageLiveData().observe(this, errorMessage -> {
             if (errorMessage != null && !errorMessage.trim().isEmpty()) {
@@ -152,6 +169,7 @@ public class ComplaintDetailActivity extends AppCompatActivity {
         }
         complaintViewModel.getComplaint(complaintId);
         complaintViewModel.getUpdatesForComplaint(complaintId);
+        complaintViewModel.getFeedbackForComplaint(complaintId);
     }
 
     private void bindComplaint(Complaint complaint) {
@@ -173,6 +191,7 @@ public class ComplaintDetailActivity extends AppCompatActivity {
 
         bindAuthorityInfo(complaint);
         bindResolution(complaint);
+        bindFeedback(currentFeedbackList);
     }
 
     private void bindAuthorityInfo(Complaint complaint) {
@@ -212,6 +231,48 @@ public class ComplaintDetailActivity extends AppCompatActivity {
         resolvedOnText.setText("Resolved on: " + formatDate(resolvedAt));
     }
 
+    private void bindFeedback(List<Feedback> feedbackList) {
+        currentFeedbackList = feedbackList != null ? new ArrayList<>(feedbackList) : new ArrayList<>();
+        if (feedbackListContainer == null || feedbackCard == null || currentComplaint == null) {
+            return;
+        }
+
+        feedbackListContainer.removeAllViews();
+
+        boolean resolved = "resolved".equalsIgnoreCase(currentComplaint.getStatus());
+        Feedback currentUserFeedback = findCurrentUserFeedback(currentFeedbackList);
+        boolean shouldShowCard = !currentFeedbackList.isEmpty() || (!isAuthorityUser && resolved);
+
+        feedbackCard.setVisibility(shouldShowCard ? android.view.View.VISIBLE : android.view.View.GONE);
+        if (!shouldShowCard) {
+            return;
+        }
+
+        if (currentFeedbackList.isEmpty()) {
+            feedbackSummaryText.setText(getString(R.string.no_feedback_yet));
+            feedbackEmptyText.setVisibility(android.view.View.VISIBLE);
+            feedbackEmptyText.setText(getString(R.string.share_your_feedback_prompt));
+            return;
+        }
+
+        float totalRating = 0f;
+        for (Feedback feedback : currentFeedbackList) {
+            totalRating += feedback.getRating();
+        }
+        float average = totalRating / currentFeedbackList.size();
+        feedbackSummaryText.setText(getString(R.string.average_rating_format, average));
+        feedbackEmptyText.setVisibility(android.view.View.VISIBLE);
+        feedbackEmptyText.setText(getString(R.string.feedback_count_format, currentFeedbackList.size()));
+
+        if (currentUserFeedback != null && !isAuthorityUser) {
+            giveFeedbackButton.setVisibility(android.view.View.GONE);
+        }
+
+        for (Feedback feedback : currentFeedbackList) {
+            feedbackListContainer.addView(createFeedbackItemView(feedback, feedback == currentUserFeedback));
+        }
+    }
+
     private void bindTimeline(List<Update> updates) {
         timelineContainer.removeAllViews();
 
@@ -236,6 +297,41 @@ public class ComplaintDetailActivity extends AppCompatActivity {
         timelineContainer.addView(item);
     }
 
+    private View createFeedbackItemView(Feedback feedback, boolean isCurrentUserFeedback) {
+        LinearLayout item = new LinearLayout(this);
+        item.setOrientation(LinearLayout.VERTICAL);
+        item.setPadding(0, 0, 0, 24);
+
+        TextView title = new TextView(this);
+        title.setText(isCurrentUserFeedback ? getString(R.string.your_feedback) : getString(R.string.citizen_feedback));
+        title.setTextColor(getResources().getColor(R.color.text_primary, null));
+        title.setTextSize(15);
+        item.addView(title);
+
+        TextView rating = new TextView(this);
+        rating.setText("Rating: " + feedback.getRating() + "/5");
+        rating.setTextColor(getResources().getColor(R.color.text_secondary, null));
+        item.addView(rating);
+
+        if (feedback.getComment() != null && !feedback.getComment().trim().isEmpty()) {
+            TextView comment = new TextView(this);
+            comment.setText(feedback.getComment().trim());
+            comment.setTextColor(getResources().getColor(R.color.text_primary, null));
+            comment.setPadding(0, 8, 0, 0);
+            item.addView(comment);
+        }
+
+        if (feedback.getCreatedAt() != null) {
+            TextView createdAt = new TextView(this);
+            createdAt.setText(DateUtils.formatDateTime(feedback.getCreatedAt()));
+            createdAt.setTextColor(getResources().getColor(R.color.text_secondary, null));
+            createdAt.setPadding(0, 8, 0, 0);
+            item.addView(createdAt);
+        }
+
+        return item;
+    }
+
     private void openUpdateStatusSheet() {
         if (!isAuthorityUser || currentComplaint == null) {
             return;
@@ -244,6 +340,65 @@ public class ComplaintDetailActivity extends AppCompatActivity {
         UpdateStatusBottomSheet bottomSheet = UpdateStatusBottomSheet.newInstance(currentComplaint.getStatus());
         bottomSheet.setOnStatusUpdateListener(this::applyStatusUpdate);
         bottomSheet.show(getSupportFragmentManager(), "update_status");
+    }
+
+    private void openFeedbackDialog() {
+        if (currentComplaint == null || !"resolved".equalsIgnoreCase(currentComplaint.getStatus())) {
+            return;
+        }
+        if (findCurrentUserFeedback(currentFeedbackList) != null) {
+            Toast.makeText(this, getString(R.string.feedback_already_submitted), Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        LinearLayout container = new LinearLayout(this);
+        container.setOrientation(LinearLayout.VERTICAL);
+        int padding = (int) (20 * getResources().getDisplayMetrics().density);
+        container.setPadding(padding, padding, padding, 0);
+
+        RatingBar ratingBar = new RatingBar(this, null, android.R.attr.ratingBarStyle);
+        ratingBar.setNumStars(5);
+        ratingBar.setStepSize(1f);
+        container.addView(ratingBar);
+
+        EditText commentInput = new EditText(this);
+        commentInput.setHint(getString(R.string.comments));
+        commentInput.setMinLines(3);
+        commentInput.setMaxLines(5);
+        container.addView(commentInput);
+
+        new MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.provide_feedback)
+                .setView(container)
+                .setPositiveButton(R.string.submit_feedback, (dialog, which) -> {
+                    int rating = Math.round(ratingBar.getRating());
+                    if (rating <= 0) {
+                        Toast.makeText(this, getString(R.string.feedback_requires_rating), Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    User currentUser = authViewModel.getCurrentUser();
+                    if (currentUser == null) {
+                        Toast.makeText(this, "Please sign in again", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    Feedback feedback = new Feedback(
+                            currentComplaint.getId(),
+                            currentUser.getUid(),
+                            rating,
+                            commentInput.getText() != null ? commentInput.getText().toString().trim() : ""
+                    );
+
+                    if (complaintViewModel.addFeedback(feedback)) {
+                        complaintViewModel.getFeedbackForComplaint(currentComplaint.getId());
+                        Toast.makeText(this, getString(R.string.feedback_submitted_successfully), Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(this, "Failed to submit feedback", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton(R.string.cancel, null)
+                .show();
     }
 
     private void applyStatusUpdate(String status, String comments) {
@@ -272,10 +427,24 @@ public class ComplaintDetailActivity extends AppCompatActivity {
         if (complaintUpdated && updateAdded) {
             bindComplaint(currentComplaint);
             complaintViewModel.getUpdatesForComplaint(currentComplaint.getId());
+            complaintViewModel.getFeedbackForComplaint(currentComplaint.getId());
             Toast.makeText(this, "Complaint status updated", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Failed to update complaint status", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private Feedback findCurrentUserFeedback(List<Feedback> feedbackList) {
+        User currentUser = authViewModel.getCurrentUser();
+        if (currentUser == null || feedbackList == null) {
+            return null;
+        }
+        for (Feedback feedback : feedbackList) {
+            if (feedback != null && currentUser.getUid().equals(feedback.getCitizenId())) {
+                return feedback;
+            }
+        }
+        return null;
     }
 
     private void copyTicketId() {

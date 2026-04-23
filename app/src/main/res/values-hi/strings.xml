@@ -277,4 +277,13 @@
     
     <!-- Feedback -->
     <string name="rate_your_experience">अपने अनुभव को रेट करें</string>
+    <string name="feedback_submitted_successfully">प्रतिक्रिया सफलतापूर्वक जमा की गई</string>
+    <string name="feedback_already_submitted">आप इस शिकायत के लिए पहले ही प्रतिक्रिया दे चुके हैं</string>
+    <string name="feedback_requires_rating">जमा करने से पहले कृपया रेटिंग चुनें</string>
+    <string name="no_feedback_yet">अभी तक कोई प्रतिक्रिया जमा नहीं की गई है।</string>
+    <string name="share_your_feedback_prompt">समाधान पूरा होने के बाद अपनी प्रतिक्रिया साझा करें।</string>
+    <string name="your_feedback">आपकी प्रतिक्रिया</string>
+    <string name="citizen_feedback">नागरिक प्रतिक्रिया</string>
+    <string name="average_rating_format">औसत रेटिंग: %1$.1f/5</string>
+    <string name="feedback_count_format">%1$d प्रतिक्रिया प्रविष्टियाँ</string>
 </resources>
