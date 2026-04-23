@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Info -->
+    <string name="app_name">क्यूफिक्स</string>
+    <string name="app_tagline">रिपोर्ट करें। ट्रैक करें। ठीक करें।</string>
+
+    <!-- Common Actions -->
+    <string name="ok">ठीक है</string>
+    <string name="cancel">रद्द करें</string>
+    <string name="save">सहेजें</string>
+    <string name="delete">हटाएं</string>
+    <string name="edit">संपादित करें</string>
+    <string name="share">साझा करें</string>
+    <string name="retry">पुनः प्रयास करें</string>
+    <string name="refresh">ताज़ा करें</string>
+    <string name="close">बंद करें</string>
+    <string name="next">अगला</string>
+    <string name="back">वापस</string>
+    <string name="skip">छोड़ें</string>
+    <string name="done">पूर्ण</string>
+    <string name="submit">जमा करें</string>
+    <string name="update">अपडेट करें</string>
+    <string name="apply">लागू करें</string>
+    <string name="clear">साफ़ करें</string>
+    <string name="search">खोजें</string>
+    <string name="filter">फ़िल्टर करें</string>
+
+    <!-- Authentication -->
+    <string name="welcome">स्वागत है</string>
+    <string name="welcome_back">वापसी पर स्वागत है</string>
+    <string name="sign_in_to_continue">जारी रखने के लिए साइन इन करें</string>
+    <string name="sign_up_to_get_started">शुरू करने के लिए साइन अप करें</string>
+    <string name="email">ईमेल</string>
+    <string name="password">पासवर्ड</string>
+    <string name="confirm_password">पासवर्ड की पुष्टि करें</string>
+    <string name="sign_in">साइन इन करें</string>
+    <string name="sign_up">साइन अप करें</string>
+    <string name="create_account">खाता बनाएं</string>
+    <string name="forgot_password">पासवर्ड भूल गए?</string>
+    <string name="reset_password">पासवर्ड रीसेट करें</string>
+    <string name="send_reset_link">रीसेट लिंक भेजें</string>
+    <string name="dont_have_account">खाता नहीं है?</string>
+    <string name="already_have_account">पहले से खाता है?</string>
+    <string name="sign_up_here">यहां साइन अप करें</string>
+    <string name="sign_in_here">यहां साइन इन करें</string>
+    <string name="continue_with_google">Google के साथ जारी रखें</string>
+    <string name="or">या</string>
+    <string name="new_to_qfix">क्यूफिक्स पर नए हैं? खाता बनाएं</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">तुरंत समस्याएं रिपोर्ट करें</string>
+    <string name="onboarding_desc_1">गड्ढों, टूटी हुई सड़क बत्तियों या कचरा संग्रह समस्याओं जैसी नागरिक समस्याओं की तुरंत रिपोर्ट करें</string>
+    <string name="onboarding_title_2">वास्तविक समय में प्रगति ट्रैक करें</string>
+    <string name="onboarding_desc_2">अपनी शिकायतों की स्थिति की निगरानी करें और अधिकारियों से समय पर अपडेट प्राप्त करें</string>
+    <string name="onboarding_title_3">अपने समुदाय में प्रभाव देखें</string>
+    <string name="onboarding_desc_3">अपने पड़ोस में हल किए गए मुद्दों और समग्र नागरिक स्वास्थ्य देखें</string>
+    <string name="get_started">शुरू करें</string>
+
+    <!-- Role Selection -->
+    <string name="select_your_role">अपनी भूमिका चुनें</string>
+    <string name="citizen">नागरिक</string>
+    <string name="citizen_desc">अपने क्षेत्र में नागरिक समस्याओं की रिपोर्ट करें</string>
+    <string name="authority">अधिकारी</string>
+    <string name="authority_desc">रिपोर्ट किए गए मुद्दों का प्रबंधन और समाधान करें</string>
+    <string name="profile_incomplete">कृपया अपनी प्रोफ़ाइल पूरी करें</string>
+
+    <!-- Citizen Signup -->
+    <string name="full_name">पूरा नाम</string>
+    <string name="phone">फ़ोन नंबर</string>
+    <string name="house_flat_no">घर/फ्लैट नंबर</string>
+    <string name="street_area">सड़क/क्षेत्र</string>
+    <string name="city">शहर</string>
+    <string name="pincode">पिनकोड</string>
+    <string name="terms_conditions">मैं नियम और शर्तों से सहमत हूं</string>
+    <string name="create_my_account">मेरा खाता बनाएं</string>
+
+    <!-- Authority Signup -->
+    <string name="department">विभाग</string>
+    <string name="employee_id">कर्मचारी आईडी</string>
+    <string name="employee_id_info">सत्यापन के लिए आपकी आधिकारिक कर्मचारी आईडी</string>
+    <string name="designation">पदनाम</string>
+    <string name="work_area_ward">कार्य क्षेत्र/वार्ड</string>
+    <string name="upload_id_proof">आईडी प्रूफ अपलोड करें</string>
+    <string name="authority_warning">नोट: प्रशासन आपके खाते की समीक्षा और सत्यापन करेगा खाता सक्रियण से पहले</string>
+    <string name="submit_for_verification">सत्यापन के लिए जमा करें</string>
+
+    <!-- Departments -->
+    <string name="roads_dept">सड़क विभाग</string>
+    <string name="water_dept">जल विभाग</string>
+    <string name="sanitation_dept">स्वच्छता विभाग</string>
+    <string name="electricity_dept">विद्युत विभाग</string>
+    <string name="parks_dept">पार्क विभाग</string>
+    <string name="public_health">जन स्वास्थ्य</string>
+    <string name="animal_control">पशु नियंत्रण</string>
+    <string name="other_dept">अन्य विभाग</string>
+
+    <!-- Dashboard -->
+    <string name="good_morning">शुभ प्रभात,</string>
+    <string name="good_afternoon">शुभ अपराह्न,</string>
+    <string name="good_evening">शुभ संध्या,</string>
+    <string name="search_complaints">शिकायतें खोजें…</string>
+    <string name="your_city_at_a_glance">एक नज़र में आपका शहर</string>
+    <string name="total_reports">कुल रिपोर्ट</string>
+    <string name="resolved_percent">हल %</string>
+    <string name="avg_fix_days">औसत दिन सुधारें</string>
+    <string name="quick_actions">त्वरित कार्रवाइयां</string>
+    <string name="report_issue">समस्या रिपोर्ट करें</string>
+    <string name="track_my_ticket">मेरा टिकट ट्रैक करें</string>
+    <string name="browse_issues">समस्याएं ब्राउज़ करें</string>
+    <string name="emergency_report">आपातकालीन रिपोर्ट</string>
+    <string name="my_recent_reports">मेरी हाल की रिपोर्टें</string>
+    <string name="community_reports_near_you">आपके पड़ोस में सामुदायिक रिपोर्टें</string>
+    <string name="browse_by_category">श्रेणी के अनुसार ब्राउज़ करें</string>
+
+    <!-- Complaint Status -->
+    <string name="open">खुला</string>
+    <string name="in_progress">प्रगति पर है</string>
+    <string name="resolved">हल हो गया</string>
+    <string name="closed">बंद</string>
+
+    <!-- Authority Dashboard -->
+    <string name="dashboard">डैशबोर्ड</string>
+    <string name="complaints">शिकायतें</string>
+    <string name="notifications">सूचनाएं</string>
+    <string name="profile">प्रोफ़ाइल</string>
+    <string name="this_week_s_activity">इस सप्ताह की गतिविधि</string>
+    <string name="needs_attention">ध्यान की आवश्यकता है</string>
+    <string name="recent_activity">हाल की गतिविधियाँ</string>
+    <string name="avg_rating">औसत रेटिंग</string>
+
+    <!-- My Complaints -->
+    <string name="my_complaints">मेरी शिकायतें</string>
+    <string name="sort_by">क्रमबद्ध करें:</string>
+    <string name="filter_by">फ़िल्टर करें:</string>
+
+    <!-- Report Complaint -->
+    <string name="report_new_complaint">नई शिकायत रिपोर्ट करें</string>
+    <string name="complaint_category">शिकायत श्रेणी</string>
+    <string name="describe_issue">समस्या का विस्तृत वर्णन करें</string>
+    <string name="add_photos">फोटो जोड़ें (अधिकतम 5)</string>
+    <string name="tag_location">स्थान टैग करें</string>
+    <string name="review_and_submit">समीक्षा और जमा करें</string>
+    <string name="submit_report">रिपोर्ट जमा करें</string>
+    <string name="complaint_submitted">शिकायत जमा हो गई!</string>
+    <string name="complaint_submitted_desc">आपकी शिकायत सफलतापूर्वक जमा कर दी गई है। आपको इसकी स्थिति पर अपडेट प्राप्त होंगे।</string>
+    <string name="view_complaint">शिकायत देखें</string>
+
+    <!-- Categories -->
+    <string name="pothole">गड्ढा</string>
+    <string name="drainage">नाली</string>
+    <string name="garbage">कचरा संग्रह</string>
+    <string name="street_light">सड़क बत्ती</string>
+    <string name="water_leakage">जल रिसाव</string>
+    <string name="electric_pole">बिजली पोल</string>
+    <string name="public_park">सार्वजनिक उद्यान</string>
+    <string name="traffic_signal">ट्रैफ़िक सिग्नल</string>
+    <string name="other">अन्य</string>
+
+    <!-- Complaint Detail -->
+    <string name="complaint_details">शिकायत विवरण</string>
+    <string name="complaint_id">शिकायत आईडी</string>
+    <string name="submitted_on">पर जमा किया गया</string>
+    <string name="current_status">वर्तमान स्थिति</string>
+    <string name="timeline">समयरेखा</string>
+    <string name="updates">अपडेट</string>
+    <string name="feedback">प्रतिक्रिया</string>
+    <string name="provide_feedback">प्रतिक्रिया प्रदान करें</string>
+    <string name="give_feedback">प्रतिक्रिया दें</string>
+    <string name="rating">रेटिंग</string>
+    <string name="submit_feedback">प्रतिक्रिया जमा करें</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_home">होम</string>
+    <string name="nav_my_complaints">मेरी शिकायतें</string>
+    <string name="nav_notifications">सूचनाएं</string>
+    <string name="nav_profile">प्रोफ़ाइल</string>
+    <string name="nav_dashboard">डैशबोर्ड</string>
+
+    <!-- Error Messages -->
+    <string name="error_field_required">यह फ़ील्ड आवश्यक है</string>
+    <string name="error_invalid_email">अमान्य ईमेल पता</string>
+    <string name="error_password_mismatch">पासवर्ड मेल नहीं खाते</string>
+    <string name="error_terms_not_accepted">आपको नियम और शर्तों से सहमत होना होगा</string>
+    <string name="error_network">नेटवर्क त्रुटि। कृपया अपना कनेक्शन जांचें।</string>
+    <string name="error_retry">कुछ गलत हो गया। कृपया पुन: प्रयास करें।</string>
+
+    <!-- Success Messages -->
+    <string name="success_profile_updated">प्रोफ़ाइल सफलतापूर्वक अपडेट कर दी गई</string>
+    <string name="success_password_changed">पासवर्ड सफलतापूर्वक बदल दिया गया</string>
+
+    <!-- Profile -->
+    <string name="edit_profile">प्रोफ़ाइल संपादित करें</string>
+    <string name="change_password">पासवर्ड बदलें</string>
+    <string name="logout">लॉगआउट</string>
+    <string name="account_settings">खाता सेटिंग्स</string>
+    <string name="notification_settings">सूचना सेटिंग्स</string>
+    <string name="privacy_policy">गोपनीयता नीति</string>
+    <string name="terms_of_service">सेवा की शर्तें</string>
+    <string name="contact_us">हमसे संपर्क करें</string>
+    <string name="about_us">हमारे बारे में</string>
+
+    <!-- Report complaint -->
+    <string name="photos">फोटोज़</string>
+    <string name="details">विवरण</string>
+    <string name="location">स्थान</string>
+    <string name="document_the_issue">समस्या को दस्तावेज़ित करें</string>
+    <string name="add_photos_desc">अधिकारियों को समस्या को बेहतर ढंग से समझने में मदद करने के लिए स्पष्ट फोटो जोड़ें।</string>
+    <string name="photos_tips">टिप: बेहतर दृश्यता के लिए अच्छी रोशनी में विभिन्न कोणों से फोटो लें।</string>
+    <string name="add_photo">फोटो जोड़ें</string>
+    <string name="selected_photo">चयनित फोटो</string>
+    <string name="remove_photo">फोटो हटाएं</string>
+    
+    <!-- Details Fragment -->
+    <string name="category">श्रेणी</string>
+    <string name="title">शीर्षक</string>
+    <string name="title_placeholder">समस्या का संक्षिप्त शीर्षक</string>
+    <string name="description">विवरण</string>
+    <string name="description_placeholder">समस्या का विस्तृत वर्णन...</string>
+    <string name="priority">प्राथमिकता</string>
+    <string name="low">कम</string>
+    <string name="medium">मध्यम</string>
+    <string name="high">उच्च</string>
+    <string name="critical">गंभीर</string>
+    <string name="make_public">इस शिकायत को सार्वजनिक बनाएं</string>
+    
+    <!-- Location Fragment -->
+    <string name="where_is_the_issue">समस्या कहां है?</string>
+    <string name="house_flat_near">घर/फ्लैट के पास</string>
+    <string name="street_road_name">सड़क/रास्ते का नाम</string>
+    <string name="landmark">स्थल चिह्न</string>
+    <string name="landmark_placeholder">आसपास के स्थल चिह्न (वैकल्पिक)</string>
+    <string name="area_locality">क्षेत्र/इलाका</string>
+    <string name="ward_zone">वार्ड/क्षेत्र</string>
+    <string name="assigned_to">स्वचालित रूप से उपयुक्त विभाग को सौंपा गया</string>
+    
+    <!-- Authority Complaints -->
+    <string name="all">सभी</string>
+    
+    <!-- Google Sign In -->
+    <string name="default_web_client_id">YOUR_DEFAULT_WEB_CLIENT_ID</string>
+    
+    <!-- Additional strings for profile -->
+    <string name="reports">रिपोर्टें</string>
+    <string name="pending_count">लंबित</string>
+    <string name="my_account">मेरा खाता</string>
+    <string name="privacy_settings">गोपनीयता सेटिंग्स</string>
+    <string name="my_activity">मेरी गतिविधि</string>
+    <string name="my_feedback_given">मेरी दी गई प्रतिक्रिया</string>
+    <string name="app_settings">ऐप सेटिंग्स</string>
+    <string name="language">भाषा</string>
+    <string name="dark_mode">डार्क मोड</string>
+    <string name="help_support">सहायता और समर्थन</string>
+    <string name="about_qfix">क्यूफिक्स के बारे में</string>
+    <string name="rate_the_app">ऐप को रेट करें</string>
+    <string name="app_version">संस्करण 1.0</string>
+    
+    <!-- Notifications -->
+    <string name="mark_all_read">सभी को पढ़ा हुआ चिह्नित करें</string>
+    <string name="today">आज</string>
+    <string name="yesterday">कल</string>
+    <string name="earlier">पहले</string>
+    <string name="no_notifications_yet">अभी तक कोई सूचनाएं नहीं</string>
+    <string name="comments">टिप्पणियाँ</string>
+    
+    <!-- Additional strings -->
+    <string name="version">संस्करण 1.0</string>
+    <string name="report_it_track_it_fix_it">रिपोर्ट करें। ट्रैक करें। ठीक करें।</string>
+    <string name="no_complaints_yet">अभी तक कोई शिकायत नहीं</string>
+    <string name="report_an_issue">एक समस्या की रिपोर्ट करें</string>
+    <string name="rejected">अस्वीकृत</string>
+    
+    <!-- Bottom Sheet -->
+    <string name="update_complaint_status">शिकायत की स्थिति अपडेट करें</string>
+    <string name="add_comments">टिप्पणियाँ जोड़ें</string>
+    <string name="status">स्थिति</string>
+    <string name="comment">टिप्पणी</string>
+    
+    <!-- Feedback -->
+    <string name="rate_your_experience">अपने अनुभव को रेट करें</string>
+</resources>

@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "174250159262",
+    "project_id": "aidlink-492116",
+    "storage_bucket": "aidlink-492116.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174250159262:android:1709b2e520983bc87bdf8f",
+        "android_client_info": {
+          "package_name": "com.umera.qfix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174250159262-n61th7nphi8a0s59ojtokkjmjp4rq0ng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXVn-wVFL_kZf1duPGTFz5FY-6oK8995Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174250159262-n61th7nphi8a0s59ojtokkjmjp4rq0ng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:174250159262:android:3657246ec8bc6fea7bdf8f",
+        "android_client_info": {
+          "package_name": "com.umera.quickfix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "174250159262-n61th7nphi8a0s59ojtokkjmjp4rq0ng.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXVn-wVFL_kZf1duPGTFz5FY-6oK8995Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "174250159262-n61th7nphi8a0s59ojtokkjmjp4rq0ng.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

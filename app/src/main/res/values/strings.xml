@@ -1,0 +1,301 @@
+<resources>
+    <!-- App Info -->
+    <string name="app_name">QFix</string>
+    <string name="app_tagline">Report it. Track it. Fix it.</string>
+
+    <!-- Common Actions -->
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="share">Share</string>
+    <string name="retry">Retry</string>
+    <string name="refresh">Refresh</string>
+    <string name="close">Close</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+    <string name="skip">Skip</string>
+    <string name="done">Done</string>
+    <string name="submit">Submit</string>
+    <string name="update">Update</string>
+    <string name="apply">Apply</string>
+    <string name="clear">Clear</string>
+    <string name="search">Search</string>
+    <string name="filter">Filter</string>
+
+    <!-- Authentication -->
+    <string name="welcome">Welcome</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="sign_in_to_continue">Sign in to continue</string>
+    <string name="sign_up_to_get_started">Sign up to get started</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="create_account">Create Account</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="send_reset_link">Send Reset Link</string>
+    <string name="dont_have_account">Don\'t have an account?</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="sign_up_here">Sign up here</string>
+    <string name="sign_in_here">Sign in here</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="or">OR</string>
+    <string name="new_to_qfix">New to QFix? Create Account</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_title_1">Report Issues Instantly</string>
+    <string name="onboarding_desc_1">Quickly report civic problems like potholes, broken streetlights, or garbage collection issues</string>
+    <string name="onboarding_title_2">Track Progress Real-Time</string>
+    <string name="onboarding_desc_2">Monitor the status of your complaints and receive timely updates from authorities</string>
+    <string name="onboarding_title_3">See Impact in Your Community</string>
+    <string name="onboarding_desc_3">View resolved issues and overall civic health in your neighborhood</string>
+    <string name="get_started">Get Started</string>
+
+    <!-- Role Selection -->
+    <string name="select_your_role">Select Your Role</string>
+    <string name="citizen">Citizen</string>
+    <string name="citizen_desc">Report civic issues in your area</string>
+    <string name="authority">Authority</string>
+    <string name="authority_desc">Manage and resolve reported issues</string>
+    <string name="profile_incomplete">Please complete your profile</string>
+
+    <!-- Citizen Signup -->
+    <string name="full_name">Full Name</string>
+    <string name="phone">Phone Number</string>
+    <string name="house_flat_no">House/Flat No</string>
+    <string name="street_area">Street/Area</string>
+    <string name="city">City</string>
+    <string name="pincode">Pincode</string>
+    <string name="terms_conditions">I agree to Terms and Conditions</string>
+    <string name="create_my_account">Create My Account</string>
+
+    <!-- Authority Signup -->
+    <string name="department">Department</string>
+    <string name="employee_id">Employee ID</string>
+    <string name="employee_id_info">Your official employee ID for verification purposes</string>
+    <string name="designation">Designation</string>
+    <string name="work_area_ward">Work Area/Ward</string>
+    <string name="upload_id_proof">Upload ID Proof</string>
+    <string name="authority_warning">Note: Your account will be reviewed and verified by administrators before activation</string>
+    <string name="submit_for_verification">Submit for Verification</string>
+
+    <!-- Departments -->
+    <string name="roads_dept">Roads Department</string>
+    <string name="water_dept">Water Department</string>
+    <string name="sanitation_dept">Sanitation Department</string>
+    <string name="electricity_dept">Electricity Department</string>
+    <string name="parks_dept">Parks Department</string>
+    <string name="public_health">Public Health</string>
+    <string name="animal_control">Animal Control</string>
+    <string name="other_dept">Other Department</string>
+
+    <!-- Dashboard -->
+    <string name="good_morning">Good Morning,</string>
+    <string name="good_afternoon">Good Afternoon,</string>
+    <string name="good_evening">Good Evening,</string>
+    <string name="search_complaints">Search complaints…</string>
+    <string name="your_city_at_a_glance">Your City at a Glance</string>
+    <string name="total_reports">Total Reports</string>
+    <string name="resolved_percent">Resolved %</string>
+    <string name="avg_fix_days">Avg Fix Days</string>
+    <string name="quick_actions">Quick Actions</string>
+    <string name="report_issue">Report Issue</string>
+    <string name="track_my_ticket">Track My Ticket</string>
+    <string name="browse_issues">Browse Issues</string>
+    <string name="emergency_report">Emergency Report</string>
+    <string name="my_recent_reports">My Recent Reports</string>
+    <string name="community_reports_near_you">Community Reports Near You</string>
+    <string name="browse_by_category">Browse by Category</string>
+
+    <!-- Complaint Status -->
+    <string name="open">Open</string>
+    <string name="in_progress">In Progress</string>
+    <string name="resolved">Resolved</string>
+    <string name="closed">Closed</string>
+
+    <!-- Authority Dashboard -->
+    <string name="dashboard">Dashboard</string>
+    <string name="complaints">Complaints</string>
+    <string name="notifications">Notifications</string>
+    <string name="profile">Profile</string>
+    <string name="this_week_s_activity">This Week\'s Activity</string>
+    <string name="needs_attention">Needs Attention</string>
+    <string name="recent_activity">Recent Activity</string>
+    <string name="avg_rating">Avg Rating</string>
+
+    <!-- My Complaints -->
+    <string name="my_complaints">My Complaints</string>
+    <string name="sort_by">Sort by:</string>
+    <string name="filter_by">Filter by:</string>
+
+    <!-- Report Complaint -->
+    <string name="report_new_complaint">Report New Complaint</string>
+    <string name="complaint_category">Complaint Category</string>
+    <string name="describe_issue">Describe the issue in detail</string>
+    <string name="add_photos">Add Photos (Max 5)</string>
+    <string name="tag_location">Tag Location</string>
+    <string name="review_and_submit">Review and Submit</string>
+    <string name="submit_report">Submit Report</string>
+    <string name="complaint_submitted">Complaint Submitted!</string>
+    <string name="complaint_submitted_desc">Your complaint has been successfully submitted. You will receive updates on its status.</string>
+    <string name="view_complaint">View Complaint</string>
+
+    <!-- Categories -->
+    <string name="pothole">Pothole</string>
+    <string name="drainage">Drainage</string>
+    <string name="garbage">Garbage Collection</string>
+    <string name="street_light">Street Light</string>
+    <string name="water_leakage">Water Leakage</string>
+    <string name="electric_pole">Electric Pole</string>
+    <string name="public_park">Public Park</string>
+    <string name="traffic_signal">Traffic Signal</string>
+    <string name="other">Other</string>
+
+    <!-- Complaint Detail -->
+    <string name="complaint_details">Complaint Details</string>
+    <string name="complaint_id">Complaint ID</string>
+    <string name="submitted_on">Submitted On</string>
+    <string name="current_status">Current Status</string>
+    <string name="timeline">Timeline</string>
+    <string name="updates">Updates</string>
+    <string name="feedback">Feedback</string>
+    <string name="provide_feedback">Provide Feedback</string>
+    <string name="give_feedback">Give Feedback</string>
+    <string name="rating">Rating</string>
+    <string name="comments">Comments</string>
+    <string name="submit_feedback">Submit Feedback</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_my_complaints">My Complaints</string>
+    <string name="nav_notifications">Notifications</string>
+    <string name="nav_profile">Profile</string>
+    <string name="nav_dashboard">Dashboard</string>
+
+    <!-- Error Messages -->
+    <string name="error_field_required">This field is required</string>
+    <string name="error_invalid_email">Invalid email address</string>
+    <string name="error_password_mismatch">Passwords do not match</string>
+    <string name="error_terms_not_accepted">You must accept the terms and conditions</string>
+    <string name="error_network">Network error. Please check your connection.</string>
+    <string name="error_retry">Something went wrong. Please try again.</string>
+
+    <!-- Success Messages -->
+    <string name="success_profile_updated">Profile updated successfully</string>
+    <string name="success_password_changed">Password changed successfully</string>
+
+    <!-- Profile -->
+    <string name="edit_profile">Edit Profile</string>
+    <string name="change_password">Change Password</string>
+    <string name="logout">Logout</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="notification_settings">Notification Settings</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="terms_of_service">Terms of Service</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="about_us">About Us</string>
+
+    <!-- Report complaint -->
+    <string name="photos">Photos</string>
+    <string name="details">Details</string>
+    <string name="location">Location</string>
+    <string name="document_the_issue">Document the Issue</string>
+    <string name="add_photos_desc">Add clear photos of the problem to help authorities better understand the issue.</string>
+    <string name="photos_tips">Tip: Take photos from different angles in good lighting for better visibility.</string>
+    <string name="add_photo">Add photo</string>
+    <string name="selected_photo">Selected photo</string>
+    <string name="remove_photo">Remove photo</string>
+    
+    <!-- Details Fragment -->
+    <string name="category">Category</string>
+    <string name="title">Title</string>
+    <string name="title_placeholder">Brief title of the issue</string>
+    <string name="description">Description</string>
+    <string name="description_placeholder">Detailed description of the problem...</string>
+    <string name="priority">Priority</string>
+    <string name="low">Low</string>
+    <string name="medium">Medium</string>
+    <string name="high">High</string>
+    <string name="critical">Critical</string>
+    <string name="make_public">Make this complaint public</string>
+    
+    <!-- Location Fragment -->
+    <string name="where_is_the_issue">Where is the Issue?</string>
+    <string name="house_flat_near">House/Flat near</string>
+    <string name="street_road_name">Street/Road Name</string>
+    <string name="landmark">Landmark</string>
+    <string name="landmark_placeholder">Nearby landmark (optional)</string>
+    <string name="area_locality">Area/Locality</string>
+    <string name="ward_zone">Ward/Zone</string>
+    <string name="assigned_to">Automatically assigned to appropriate department</string>
+    
+    <!-- Authority Complaints -->
+    <string name="all">All</string>
+    
+    <!-- Google Sign In -->
+    <string name="default_web_client_id">YOUR_DEFAULT_WEB_CLIENT_ID</string>
+    
+    <!-- Notifications -->
+    <string name="mark_all_read">Mark All Read</string>
+    <string name="today">Today</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="earlier">Earlier</string>
+    <string name="no_notifications_yet">No notifications yet</string>
+    
+    <!-- Additional strings -->
+    <string name="version">Version 1.0</string>
+    <string name="report_it_track_it_fix_it">Report it. Track it. Fix it.</string>
+    <string name="no_complaints_yet">No complaints yet</string>
+    <string name="report_an_issue">Report an Issue</string>
+    <string name="rejected">Rejected</string>
+    
+    <!-- Bottom Sheet -->
+    <string name="update_complaint_status">Update Complaint Status</string>
+    <string name="add_comments">Add Comments</string>
+    <string name="status">Status</string>
+    <string name="comment">Comment</string>
+    
+    <!-- Feedback -->
+    <string name="rate_your_experience">Rate Your Experience</string>
+    
+    <!-- Additional profile strings -->
+    <string name="reports">Reports</string>
+    <string name="pending_count">Pending</string>
+    <string name="my_account">My Account</string>
+    <string name="privacy_settings">Privacy Settings</string>
+    <string name="my_activity">My Activity</string>
+    <string name="my_feedback_given">My Feedback Given</string>
+    <string name="app_settings">App Settings</string>
+    <string name="language">Language</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="help_support">Help &amp; Support</string>
+    <string name="about_qfix">About QFix</string>
+    <string name="rate_the_app">Rate the App</string>
+    <string name="app_version">Version 1.0</string>
+
+    <!-- Additional UI labels -->
+    <string name="authority_dashboard">Authority Dashboard</string>
+    <string name="authority_info">Authority Info</string>
+    <string name="category_label">Category</string>
+    <string name="copy">Copy</string>
+    <string name="date_submitted">Date Submitted</string>
+    <string name="escalate">Escalate</string>
+    <string name="home">Home</string>
+    <string name="how_was_resolution">How was the resolution?</string>
+    <string name="issue_details">Issue Details</string>
+    <string name="issue_resolved">Issue Resolved?</string>
+    <string name="last_updated">Last Updated</string>
+    <string name="progress_timeline">Progress Timeline</string>
+    <string name="report_instantly">Report Instantly</string>
+    <string name="report_instantly_desc">Submit civic issues quickly with photos and location details.</string>
+    <string name="track_progress">Track Progress</string>
+    <string name="track_progress_desc">Follow complaint updates and status changes in real time.</string>
+    <string name="make_difference">Make a Difference</string>
+    <string name="make_difference_desc">See how reporting issues improves your neighborhood.</string>
+    <string name="report_similar">Report Similar</string>
+    <string name="who_are_you">Who are you?</string>
+</resources>

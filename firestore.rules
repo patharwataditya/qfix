@@ -1,0 +1,84 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow public read access to categories
+    match /categories/{categoryId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    
+    // Users collection
+    match /users/{userId} {
+      // Users can read and write their own data
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      // Authorities can read citizen data in their ward
+      allow read: if request.auth != null && 
+                  get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'authority' &&
+                  resource.data.ward == get(/databases/$(database)/documents/users/$(request.auth.uid)).data.ward;
+    }
+    
+    // Complaints collection
+    match /complaints/{complaintId} {
+      // Authenticated users can read public complaints or their own complaints
+      allow read: if request.auth != null && 
+                  (resource.data.isPublic == true || 
+                   resource.data.citizenId == request.auth.uid ||
+                   (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'authority' &&
+                    get(/databases/$(database)/documents/users/$(request.auth.uid)).data.ward == resource.data.ward));
+      
+      // Citizens can create complaints
+      allow create: if request.auth != null && 
+                    request.resource.data.keys().hasAll(['title', 'category', 'description', 'locationText', 'ward', 'photos', 'status', 'priority', 'citizenId', 'createdAt']) &&
+                    request.resource.data.citizenId == request.auth.uid;
+      
+      // Owners and authorities can update complaints
+      allow update: if request.auth != null && 
+                    (resource.data.citizenId == request.auth.uid ||
+                     (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'authority' &&
+                      get(/databases/$(database)/documents/users/$(request.auth.uid)).data.ward == resource.data.ward));
+      
+      // No one can delete complaints
+      allow delete: if false;
+    }
+    
+    // Feedback collection
+    match /feedback/{feedbackId} {
+      // Authenticated users can read feedback on public complaints or their own complaints
+      allow read: if request.auth != null && 
+                  (get(/databases/$(database)/documents/complaints/$(feedbackId)).data.isPublic == true || 
+                   get(/databases/$(database)/documents/complaints/$(feedbackId)).data.citizenId == request.auth.uid ||
+                   (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'authority' &&
+                    get(/databases/$(database)/documents/users/$(request.auth.uid)).data.ward == get(/databases/$(database)/documents/complaints/$(feedbackId)).data.ward));
+      
+      // Citizens can create feedback on resolved complaints
+      allow create: if request.auth != null && 
+                    request.resource.data.keys().hasAll(['complaintId', 'citizenId', 'rating', 'comment', 'createdAt']) &&
+                    request.resource.data.citizenId == request.auth.uid &&
+                    get(/databases/$(database)/documents/complaints/$(request.resource.data.complaintId)).data.status == 'resolved' &&
+                    get(/databases/$(database)/documents/complaints/$(request.resource.data.complaintId)).data.citizenId == request.auth.uid;
+      
+      // No updates or deletes
+      allow update, delete: if false;
+    }
+    
+    // Updates subcollection
+    match /complaints/{complaintId}/updates/{updateId} {
+      // Authenticated users can read updates on complaints they have access to
+      allow read: if request.auth != null && 
+                  (get(/databases/$(database)/documents/complaints/$(complaintId)).data.isPublic == true || 
+                   get(/databases/$(database)/documents/complaints/$(complaintId)).data.citizenId == request.auth.uid ||
+                   (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'authority' &&
+                    get(/databases/$(database)/documents/users/$(request.auth.uid)).data.ward == get(/databases/$(database)/documents/complaints/$(complaintId)).data.ward));
+      
+      // Authorities can create updates
+      allow create: if request.auth != null && 
+                    request.resource.data.keys().hasAll(['complaintId', 'authorityId', 'status', 'note', 'timestamp']) &&
+                    get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'authority' &&
+                    get(/databases/$(database)/documents/users/$(request.auth.uid)).data.ward == get(/databases/$(database)/documents/complaints/$(complaintId)).data.ward;
+      
+      // No updates or deletes
+      allow update, delete: if false;
+    }
+  }
+}
